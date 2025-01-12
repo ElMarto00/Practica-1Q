@@ -690,7 +690,7 @@ margin-bottom: 10px;
   max-width: 800px;
   margin: 20px 0;
   padding: 20px;
-  background-color: white;
+  background-color: black;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   color: #333;
@@ -706,7 +706,7 @@ margin-bottom: 10px;
   margin-bottom: 20px;
   font-size: 1rem;
   line-height: 1.5;
-  color: #555;
+  color: white;
 }
 
 
