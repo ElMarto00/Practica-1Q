@@ -1,15 +1,61 @@
 {
-  "version": 2,
-  "builds": [
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "outputDirectory": "public",
+  "rewrites": [
+    { "source": "/", "destination": "/inicio.html" },
+    { "source": "/Nosotros", "destination": "/Nosotros.html" },
+    { "source": "/Servicios", "destination": "/Servicios.html" },
+    { "source": "/Contacto", "destination": "/Contacto.html" },
+    { "source": "/legal", "destination": "/legal.html" }
+  ],
+  "headers": [
     {
-      "src": "Inicio.html",
-      "use": "@vercel/static"
+      "source": "/mod/(.*).css",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*).js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*).png",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*).jpg",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "Inicio.html"
+  "redirects": [
+    { "source": "/old-path", "destination": "/new-path", "statusCode": 301 }
+  ],
+  "github": {
+    "silent": true,
+    "autoJobCancelation": true
+  },
+  "functions": {
+    "api/email.php": {
+      "runtime": "vercel-php@0.5.0"
     }
-  ]
+  }
 }
