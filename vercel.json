@@ -1,19 +1,15 @@
-<<<<<<< HEAD
 {
+  "version": 2,
   "builds": [
-    { "src": "index.html", "use": "@vercel/static" }
+    {
+      "src": "inicio.html",
+      "use": "@vercel/static"
+    }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/inicio.html" }
+    {
+      "src": "/(.*)",
+      "dest": "inicio.html"
+    }
   ]
 }
-=======
-{
-  "builds": [
-    { "src": "index.html", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/index.html" }
-  ]
-}
->>>>>>> fb2047f1cfa0eb396c6fc4dd5b876e9560fd2d91
